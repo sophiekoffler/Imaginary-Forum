@@ -1,0 +1,111 @@
+body {font-size:16px;
+      }
+
+.horizontal {display:flex;
+            flex-direction: row;}
+
+.vertical {display:flex;
+          flex-direction: column;}
+.mobile {display:none;}
+main {margin:2rem auto ;}
+#forumForm {width:800px;
+            border:black solid 1px;
+            border-radius: 20px;
+            padding:1rem;
+            margin:0 auto;
+            }
+h3 {font-size: 2rem;
+    text-align: center;}
+fieldset {border-top:1px solid grey;
+          margin-top:2rem;
+          }
+legend {padding: 0 .5rem 0rem 1.5rem;font-weight: bold;}
+.row {margin-bottom:1.5rem;}
+.l,.l2,.l3 {width:8rem;
+      justify-content: flex-end;}
+
+ .row:last-of-type{margin-bottom:.5rem;}
+.ast {width:1rem;
+      color: red;}
+#userC {margin-top: 2rem;}
+#userCLI {width:60%;
+          }
+label {
+                padding-right:1rem;}
+#userCLI input {width:60%;
+                padding:.25rem .25rem;}
+
+#photoDrop {align-items: center;
+            padding-left:2.5rem;}
+#dropZone{height:100px;
+
+            width:200px;background:lightblue;border:solid 1px darkblue;border-radius:10px;margin:0 auto; text-align:center;margin-bottom:10px;}
+#dropZone p {padding-top:.5rem;}
+.dragOver {background:teal;border:solid 3px darkblue;}
+output {padding-left:60px;padding-top:10px;}
+progress {width:70%;
+          margin-top: .5rem;
+          }
+#photoDrop p {text-align: center;}
+#small {margin-left:2rem;}
+#message,#extraL {margin-bottom:1rem;}
+
+#map {width: 500px; height: 300px; border:black solid 1px;
+      margin:1rem auto;}
+#add p {margin:1rem 1rem;
+        text-align: center;
+        }
+#add input, #passC input {padding:.25rem .25rem;
+            width:18rem;
+            }
+#autoB {margin:0 auto;
+        width:60%;
+        padding:.5rem 0;}
+#passC {margin:1rem 0;
+        padding-top:1rem;}
+#lifeRLabel {margin: 2rem 1rem 2rem 0;}
+#content {align-items: center;
+          }
+#content span {padding-left: 1.5rem;}
+textarea {width: 90%;
+          height:6rem;}
+#message {border-radius:10px;}
+  #extraC {align-items: center;}
+#extra p {text-align: center;
+          margin:2rem 0 1rem 0;}
+#submit {margin:1rem auto; padding:.5rem 3rem;}
+
+@media only screen and (max-width:1000px){
+  main {margin:1rem 0;
+        }
+
+  #forumForm,main,fieldset {width:95vw;}
+}
+@media only screen and (max-width:712px){
+  .desktop {display:none;}
+  .mobile {display:block;}
+  #pass2 {margin-bottom:.5rem;}
+  p.mobile {text-align: center;
+            margin-bottom: .5rem;}
+}
+@media only screen and (max-width:630px){
+  #forumForm {padding:.5rem;
+              border:none;}
+  h3 {font-size: 1.5rem;}
+  #userC,#addC,#passC,#content {flex-direction:column;}
+  #lifeRLabel {margin-right:0;
+              padding-right:0;}
+  #dropZone {margin:0;}
+  #addC input,#passC input {width:60%;}
+  #userCLI {width:100%;}
+  #map {width:90%;}
+  .l,.l2,.l3 {width:6.5rem;}
+  main {margin-bottom: 0;}
+  legend {padding:0 .5rem  0 .5rem;}
+
+  #extra p {margin-top: .5rem;}
+}
+
+@media only screen and (max-width:480px){
+  map {width:100%;}
+}

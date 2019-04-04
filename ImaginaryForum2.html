@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+     <title>Imaginary forumForm</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+  <!-- --> <script src="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.js"></script>  <!-- -->
+    <link type="text/css" rel="stylesheet" href="./resources/reset.css" />
+    <!-- --><link type="text/css" rel="stylesheet" href="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.css"/> <!--  -->
+    <link type="text/css" rel="stylesheet" href="./resources/style2.css" />
+  <!-- -->   <script src="./resources/main.js"></script> <!-- -->
+  </head>
+
+  <body onload="initialize()">
+    <main >
+      <form id="forumForm" class="vertical">
+        <h3>Imaginary Forum: New User Sign Up</h3>
+        <fieldset>
+            <legend id="userL"> User Information</legend>
+            <div id="userC" class="horizontal">
+              <div id="userCLI" class="vertical">
+                <div id="userR1" class="horizontal row">
+                  <div class="l horizontal" >
+                    <div class="ast">&#42</div>
+                    <label for="fName">First Name </label>
+                  </div><!-- l -->
+                  <input id="fName" name="fName" required autofocus autocomplete="on" type="text" pattern="[a-zA-Z]+">
+                </div><!-- userR1 -->
+                <div id="userR2" class="horizontal row">
+                  <div class="l horizontal">
+                    <div class="ast">&#42</div>
+                    <label for="lName">Last Name</label>
+                  </div><!-- l -->
+                  <input id="lName" type="text" name="lName" autofocus required autocomplete="on"  pattern="[a-zA-Z]+">
+                </div><!-- userR2 -->
+                <div id="userR3" class="horizontal row">
+                  <div class="l horizontal">
+                    <div class="ast">&#42</div>
+                    <label for="email">Email</label>
+                  </div><!-- l -->
+                  <input type="text" id="email" required autocomplete="on"  placeholder="someone@it.com" pattern="\w{1,}@\w{1,}\.[a-zA-Z]{2,}">
+                </div><!-- userR3 -->
+                <div id="userR4" class="horizontal row">
+                  <div class="l horizontal">
+                    <div class="ast"></div>
+                    <label for="phone">Phone</label>
+                  </div><!-- l -->
+                  <input id = "phone"  type="tel"  placeholder="(123) 456-7899"
+                  pattern= "\(\d{3}\)\s?\d{3}\s?-?\s?\d{4}" >
+                </div><!-- userR4 -->
+                <div id="userR5" class="horizontal row">
+                  <div class="l horizontal">
+                    <div class="ast"></div>
+                    <label for="bDay">Birthday </label>
+                  </div><!-- l -->
+                  <input type="date" id="bDay"/>
+                </div><!-- userR5 -->
+                <div id="userR6" class="horizontal row ">
+                  <div class="l horizontal">
+                    <div class="ast">&#42 </div>
+                    <label>Required</label>
+                  </div><!-- l -->
+                </div><!-- userR6 -->
+              </div><!-- userCLI labels and info -->
+              <div id="photoDrop" class="vertical">
+                <div id="dropZone" ondrop="dropHandler(event)" ondragenter="dragEnterHandler(event)" ondragleave="dragLeaveHandler(event)" ondragover="dragOverHandler(event)">
+                   <p> Drop a pic of yourself here!</p>
+                    <ul id="fileList">
+                    </ul>
+                  </div>
+                   <p id="pUp">Picture Upload</p>
+                   <progress id="fileUpload"></progress>
+                  <output id="pics" ></output>
+              </div><!-- photoDrop -->
+            </div><!-- userC -->
+          </fieldset>
+
+          <fieldset id="add">
+            <legend id="addL">Address</legend>
+            <div id="addC" class="vertical">
+              <p>Click the button below to automatically fill in address fields</p>
+              <div id="addR1" class="horizontal row">
+                <div class="l2 horizontal">
+                <!-- <div class="ast"></div> -->
+                  <label for="street">Street </label>
+                </div><!-- l2 -->
+                <input id="street" type="text" />
+              </div><!-- addR1 -->
+              <div id="addR2" class="horizontal row">
+                <div class="l2 horizontal">
+                  <!-- <div class="ast"></div> -->
+            	   <label for="city">City </label>
+               </div><!-- l2 -->
+                <input id="city" type="text" />
+              </div><!-- addR2 -->
+              <div id="addR3" class="horizontal row">
+                <div class="l2 horizontal">
+                    <!-- <div class="ast"></div> -->
+            	      <label for="state">State </label>
+                 </div><!-- l2 -->
+                 <input id="state" type ="text" />
+              </div><!-- addR3 -->
+              <div id="addR4" class="horizontal row">
+                <div class="l2 horizontal">
+                  <!-- <div class="ast"></div> -->
+            	     <label for="zip">Zip </label>
+                 </div><!-- l2 -->
+                 <input id="zip" type="text" />
+              </div><!-- aaddR4 -->
+              <div id="addR5" class="horizontal row">
+                <div class="l2 horizontal">
+                  <!-- <div class="ast"></div> -->
+            	   <label for="country">Country </label>
+               </div><!-- l2 -->
+                <input id="country" type="text" />
+              </div><!-- addR5 -->
+              <button id="autoB" onclick="getLocation()">Automate Address Fields Based on Current Location</button>
+              <div id="map"></div>
+            </div><!-- addC -->
+          </fieldset>
+
+
+          <fieldset>
+             <legend id="passL">Set User Name/Password</legend>
+             <div id="passC" class="vertical">
+               <div id="passR1" class="horizontal row">
+                 <div class="l3 horizontal">
+                   <div class="ast">&#42 </div>
+                   <label for="uName">Username</label>
+                 </div><!-- l3 -->
+                 <input id="uName" type="text" required />
+               </div><!-- passR1 -->
+               <div id="passR2" class="horizontal row">
+                 <div class="l3 horizontal">
+                   <div class="ast">&#42 </div>
+                   <label for="pass1">Password</label>
+                 </div><!-- l3 -->
+
+                 <input type="password" id ="pass1" required
+            	 pattern="[a-zA-Z]\w{5,8}" oninput="checkPasswords()"/><span class="desktop" id="small" >   6-9 characters - <mark >Start with a letter</mark></span>
+
+
+               </div><!-- passR2 -->
+               <p class="mobile">6-9 characters - <mark >Start with a letter</mark></p>
+               <div id="passR3" class="horizontal row">
+                 <div class="l3 horizontal">
+                   <div class="ast">&#42 </div>
+                   <label for="pass2">Password</label>
+                 </div><!-- l3 -->
+                 <input type="password" id ="pass2" required oninput="checkPasswords()"/>
+               </div><!-- passR3 -->
+             </div> <!-- passC -->
+          </<fieldset>
+
+          <fieldset id="extra">
+            <legend id="extraL">Extra Information</legend>
+           <p>Intro Message - Introduce yourself</p>
+           <div id="extraC" class="vertical">
+             <textarea id="message"  id="msg"></textarea>
+             <div id="content" class="horizontal">
+               <label for="lifeRating"  id="lifeRLabel" > Rate your contentment with life</label>
+          	    <input id="lifeRating"type="range" form="forumForm" min="0" max="100" step="1"  placeholder="Between 1 and 100" pattern="100|[0]*|[0][0-9]\d|\d{0,2}"/>
+                <span id="lifeScore"  > <span/>
+              </div><!-- content -->
+             <input type="submit" id="submit" onclick="submitInfo()" value="Submit" />
+           </div><!-- extraC -->
+             </form>
+          </fieldset>
+      </form>
+    </main>
+  </body>
+</html>
