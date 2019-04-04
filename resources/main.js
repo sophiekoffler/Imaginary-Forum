@@ -16,7 +16,7 @@
    document.getElementById('uName').addEventListener('change',function(){sessionStorage.uName=this.value});
    document.getElementById('pass1').addEventListener('change',function(){sessionStorage.pass1=this.value});
    document.getElementById('pass2').addEventListener('change',function(){sessionstorage.pass2=this.value});
-   document.getElementById('lifeRating').addEventListener('change',function(){sessionStorage.lifeRating=this.value});
+
    document.getElementById('message').addEventListener('change',function() {sessionStorage.message=this.value});
    document.getElementById('lifeRating').addEventListener('change',
      displayScore);
@@ -90,7 +90,7 @@
   document.getElementById('uName').value=sessionStorage.getItem('uName');
   document.getElementById('pass1').value=sessionStorage.getItem('pass1');
   document.getElementById('pass2').value=sessionStorage.getItem('pass2');
-  document.getElementById('lifeRating').value=sessionStorage.getItem('lifeRating');
+  document.getElementById('lifeRating').value=sessionStorage.getItem('displayScore');
   document.getElementById('lifeScore').innerHTML=document.getElementById('lifeRating').value + "%";
   document.getElementById('message').innerHTML=sessionStorage.getItem('message');
   }
@@ -198,7 +198,7 @@ function dropHandler(event){
         form.append("country", sessionStorage.getItem('country'));
         form.append("uName", sessionStorage.getItem('uName'));
         form.append("pass", sessionStorage.getItem('pass1'));
-        form.append("lifeScore", sessionStorage.getItem('lifeScore'));
+        form.append("lifeScore", sessionStorage.getItem('displayScore'));
         form.append("message", sessionStorage.getItem('message'));
         form.append("fileNames",sessionStorage.getItem('fileNames'));
 
