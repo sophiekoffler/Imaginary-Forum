@@ -24,7 +24,9 @@
 
    //retrieves lat/long from ip address if browser supported
    function getLocation() {
+     console.log("getLocation");
       if (navigator.geolocation) {
+        console.log("yes navigator.geolocation");
         navigator.geolocation.getCurrentPosition(showPosition);
       } else {
         document.getElementById("map").innerHTML="Geolocation API not supported by your browser.";
@@ -35,7 +37,7 @@
     //uses mapquest geocoder api for reverse geocoding
     //populates address fields and loads local map
   function showPosition(position) {
-
+    console.log("showPosition");
     L.mapquest.key = "vGJGPkAmSysxKq4otQK6O8yY1WddpgbW";
     L.mapquest.map('map',{
       center:[position.coords.latitude,position.coords.longitude],
