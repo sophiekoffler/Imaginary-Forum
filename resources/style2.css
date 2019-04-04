@@ -1,3 +1,5 @@
+
+
 body {font-size:16px;
       }
 
@@ -74,7 +76,7 @@ textarea {width: 90%;
 #extra p {text-align: center;
           margin:2rem 0 1rem 0;}
 #submit {margin:1rem auto; padding:.5rem 3rem;}
-
+#autoB {cursor: pointer;}
 @media only screen and (max-width:1000px){
   main {margin:1rem 0;
         }
