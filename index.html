@@ -24,14 +24,14 @@
                     <div class="ast">&#42</div>
                     <label for="fName">First Name </label>
                   </div><!-- l -->
-                  <input id="fName" name="fName" required autofocus autocomplete="on" type="text" pattern="[a-zA-Z]+">
+                  <input id="fName" name="fName" required autofocus autocomplete="on" type="text" pattern="[a-zA-Z]+\s{0,}">
                 </div><!-- userR1 -->
                 <div id="userR2" class="horizontal row">
                   <div class="l horizontal">
                     <div class="ast">&#42</div>
                     <label for="lName">Last Name</label>
                   </div><!-- l -->
-                  <input id="lName" type="text" name="lName" autofocus required autocomplete="on"  pattern="[a-zA-Z]+">
+                  <input id="lName" type="text" name="lName" autofocus required autocomplete="on"  pattern="[a-zA-Z]+\s{0,}">
                 </div><!-- userR2 -->
                 <div id="userR3" class="horizontal row">
                   <div class="l horizontal">
@@ -114,7 +114,7 @@
                </div><!-- l2 -->
                 <input id="country" type="text" />
               </div><!-- addR5 -->
-              <button id="autoB" onclick="getLocation()">Automate Address Fields Based on Current Location</button>
+              <button id="autoB" type="button" onclick="getLocation()">Automate Address Fields Based on Current Location</button>
               <div id="map"></div>
             </div><!-- addC -->
           </fieldset>
